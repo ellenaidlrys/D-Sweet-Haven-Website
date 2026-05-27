@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Sweet Haven | Coffee, Sweets & Equipments</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* =========================
+           CART MODAL
+        ========================== */
+
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+
+        .cart-content {
+            background: #ffffff;
+            max-width: 480px;
+            width: 90%;
+            margin: 0 auto;
+            border-radius: 16px;
+            padding: 28px;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-header h2 {
+            font-size: 1.4rem;
+            color: #3B2415;
+            margin: 0;
+        }
+
+        .close-cart {
+            font-size: 1.3rem;
+            color: #999;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-cart:hover {
+            color: #333;
+        }
+
+        .cart-items {
+            margin-bottom: 24px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .cart-item h4 {
+            font-size: 0.95rem;
+            margin: 0 0 4px 0;
+            color: #3B2415;
+        }
+
+        .cart-item p {
+            font-size: 0.85rem;
+            color: #777;
+            margin: 0;
+        }
+
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f8f5f0;
+            border-radius: 8px;
+            padding: 4px 8px;
+        }
+
+        .qty-controls button {
+            width: 26px;
+            height: 26px;
+            border: none;
+            background: #e0b987;
+            color: #3B2415;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .remove-item {
+            background: #ff4d4f !important;
+            color: white !important;
+            margin-left: 8px;
+        }
+
+        .checkout-section {
+            margin: 20px 0;
+            padding: 16px;
+            background: #fbf8f3;
+            border-radius: 10px;
+        }
+
+        .checkout-section h3 {
+            font-size: 1rem;
+            color: #3B2415;
+            margin: 0 0 12px 0;
+            font-weight: 600;
+        }
+
+        .option-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .option-row input {
+            accent-color: #d47a2c;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            background: #fff;
+        }
+
+        .form-group textarea {
+            min-height: 70px;
+            resize: none;
+        }
+
+        .cart-total {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            margin: 6px 0;
+        }
+
+        .total-row.grand {
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: #3B2415;
+            margin-top: 8px;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background: #3B2415;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #5a3826;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+
+            <div class="logo">
+                D'SWEET HAVEN
+            </div>
+
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">HOME</a>
+                <a href="#menu" class="nav-link">MENU</a>
+                <a href="#equipments" class="nav-link">EQUIPMENTS</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+
+            <div class="nav-right">
+                <button class="cart-btn" id="openCart">
+                    🛒 <span>Cart</span>
+                    <span id="cartCount">0</span>
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero" id="home" data-aos="fade-up" data-aos-duration="1500">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1>Warm Brews & Sweet Moments</h1>
+
+            <p>
+                Your cozy corner for premium coffee,
+                homemade treats, and coffee shop equipments.
+            </p>
+
+            <a href="#menu" class="order-btn">
+                Explore Menu
+            </a>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>↓</span>
+        </div>
+
+    </section>
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+
+    <section class="about" id="about" data-aos="fade-up">
+
+        <div class="section-heading">
+            <h2>Welcome to Our D'Sweet Haven</h2>
+        </div>
+
+        <div class="about-container">
+
+            <div class="about-image" data-aos="zoom-in" data-aos-delay="100">
+                <img src="images/about-coffee-shop.jpg"
+                     alt="D'Sweet Haven cozy coffee shop interior"
+                     loading="lazy">
+            </div>
+
+            <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+
+                <h3>Where Every Sip Feels Like Home</h3>
+
+                <p>
+                    At D'Sweet Haven, we believe coffee is more than a drink —
+                    it’s a warm hug in a cup.
+                </p>
+
+                <p>
+                    We serve freshly brewed premium coffee,
+                    rich pastries, soft cakes, buttery cookies,
+                    and now premium coffee equipments for every coffee lover.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         SEARCH & FILTER
+    ========================== -->
+
+    <section class="search-filter" data-aos="fade-up">
+
+        <div class="section-heading">
+            <h2>Our Menu 🍰</h2>
+        </div>
+
+        <div class="search-container">
+            <input type="text"
+                   id="searchInput"
+                   placeholder="Search coffee, cakes, equipments...">
+
+            <button id="searchBtn">🔍</button>
+        </div>
+
+        <div class="filter-buttons">
+
+            <button class="filter-btn active" data-filter="all">
+                All Items
+            </button>
+
+            <button class="filter-btn" data-filter="Coffee">
+                Coffee
+            </button>
+
+            <button class="filter-btn" data-filter="Sweet">
+                Sweets & Bakery
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         PRODUCTS / MENU
+    ========================== -->
+
+    <section class="products" id="menu" data-aos="fade-up">
+
+        <div class="products-grid" id="productsContainer">
+            <!-- JS LOADS PRODUCTS -->
+        </div>
+
+    </section>
+
+    <!-- =========================
+         EQUIPMENTS SECTION
+    ========================== -->
+
+    <section class="products" id="equipments" data-aos="fade-up">
+
+        <div class="section-heading">
+            <h2>Coffee Shop Equipments ☕</h2>
+        </div>
+
+        <div class="products-grid" id="equipmentContainer">
+
+            <div class="product-card">
+                <img src="images/espresso-machine.jpg" alt="Espresso Machine">
+                <h3>Espresso Machine</h3>
+                <div class="price">₱12,500</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/coffee-grinder.jpg" alt="Coffee Grinder">
+                <h3>Coffee Grinder</h3>
+                <div class="price">₱4,200</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/french-press.jpg" alt="French Press">
+                <h3>French Press</h3>
+                <div class="price">₱950</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/milk-frother.jpg" alt="Milk Frother">
+                <h3>Milk Frother</h3>
+                <div class="price">₱850</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/scale.jpg" alt="Coffee Scale">
+                <h3>Coffee Scale</h3>
+                <div class="price">₱650</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/tamper.jpg" alt="Coffee Tamper">
+                <h3>Coffee Tamper</h3>
+                <div class="price">₱700</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/dripper.jpg" alt="Coffee Dripper">
+                <h3>Coffee Dripper</h3>
+                <div class="price">₱550</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/kettle.jpg" alt="Gooseneck Kettle">
+                <h3>Gooseneck Kettle</h3>
+                <div class="price">₱1,250</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/knock-box.jpg" alt="Knock Box">
+                <h3>Knock Box</h3>
+                <div class="price">₱900</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/pitcher.jpg" alt="Milk Pitcher">
+                <h3>Milk Pitcher</h3>
+                <div class="price">₱480</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/tumbler.jpg" alt="Coffee Tumbler">
+                <h3>Coffee Tumbler</h3>
+                <div class="price">₱550</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+            <div class="product-card">
+                <img src="images/towel.jpg" alt="Barista Towel">
+                <h3>Barista Towel</h3>
+                <div class="price">₱180</div>
+                <button class="add-to-cart">View Item</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         GALLERY
+    ========================== -->
+
+    <section class="gallery" data-aos="fade-up">
+
+        <div class="section-heading">
+            <h2>Our Cozy Space ✨</h2>
+        </div>
+
+        <div class="gallery-grid">
+
+            <img src="images/gallery-1.jpg" alt="Gallery Image">
+            <img src="images/gallery-2.jpg" alt="Gallery Image">
+            <img src="images/gallery-3.jpg" alt="Gallery Image">
+            <img src="images/gallery-4.jpg" alt="Gallery Image">
+            <img src="images/gallery-5.jpg" alt="Gallery Image">
+            <img src="images/gallery-6.jpg" alt="Gallery Image">
+            <img src="images/gallery-7.jpg" alt="Gallery Image">
+            <img src="images/gallery-8.jpg" alt="Gallery Image">
+            <img src="images/gallery-9.jpg" alt="Gallery Image">
+            <img src="images/gallery-10.jpg" alt="Gallery Image">
+            <img src="images/gallery-11.jpg" alt="Gallery Image">
+            <img src="images/gallery-12.jpg" alt="Gallery Image">
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         TESTIMONIALS
+    ========================== -->
+
+    <section class="testimonials" data-aos="fade-up">
+
+        <div class="section-heading">
+            <h2>What Our Guests Say 💬</h2>
+        </div>
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial-card">
+                <div class="quote">❝</div>
+
+                <p>
+                    "This place feels like a warm hug.
+                    Best coffee in the city!"
+                </p>
+
+                <div class="user">
+                    <img src="images/user-1.jpg" alt="User">
+                    <h4>JM Cervantes</h4>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote">❝</div>
+
+                <p>
+                    "My favorite spot to unwind.
+                    Aroma, taste, and vibe are perfect!"
+                </p>
+
+                <div class="user">
+                    <img src="images/user-2.jpg" alt="User">
+                    <h4>Dianelle Reyes</h4>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote">❝</div>
+
+                <p>
+                    "Every bite is made with love.
+                    This is my happy place."
+                </p>
+
+                <div class="user">
+                    <img src="images/user-3.jpg" alt="User">
+                    <h4>Mikay Mendoza</h4>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contact" data-aos="fade-up">
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h2>Stay Connected</h2>
+
+                <p>
+                    Get updates on new flavors,
+                    seasonal drinks, and coffee equipments.
+                </p>
+
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h3>Visit Us</h3>
+                <p>📍 Calapan City, Oriental Mindoro Philippines</p>
+                <p>📞 +63 912 345 6789</p>
+                <p>✉️ dswethaven@coffee.ph</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#equipments">Equipments</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-col">
+                <h3>Opening Hours</h3>
+                <p>Mon - Fri: 7:00 AM - 9:00 PM</p>
+                <p>Sat - Sun: 8:00 AM - 10:00 PM</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 D'Sweet Haven | Made with love & coffee</p>
+        </div>
+
+    </footer>
+
+    <!-- =========================
+         CART MODAL
+    ========================== -->
+
+    <div class="cart-modal" id="cartModal">
+
+        <div class="cart-content">
+
+            <div class="cart-header">
+                <h2>Your Order</h2>
+
+                <button class="close-cart" id="closeCart">
+                    ×
+                </button>
+            </div>
+
+            <div class="cart-items" id="cartItems">
+                <p style="text-align:center; color:#888; padding:20px 0;">
+                    Your cart is empty ☕
+                </p>
+            </div>
+
+            <div class="cart-total">
+
+                <div class="total-row">
+                    <span>Subtotal</span>
+                    <span>₱<span id="subTotal">0.00</span></span>
+                </div>
+
+                <div class="total-row grand">
+                    <span>TOTAL</span>
+                    <span>₱<span id="grandTotal">0.00</span></span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         SUCCESS MODAL
+    ========================== -->
+
+    <div class="cart-modal" id="successModal">
+
+        <div class="cart-content"
+             style="max-width:400px; text-align:center;">
+
+            <h2 style="color:#28a745; margin-bottom:12px;">
+                ✅ Order Confirmed!
+            </h2>
+
+            <p style="color:#555; margin-bottom:20px;">
+                Thank you for ordering at D'Sweet Haven.
+            </p>
+
+            <button onclick="closeSuccessModal()"
+                    class="checkout-btn btn-primary">
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         SCRIPTS
+    ========================== -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

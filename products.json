@@ -1,0 +1,564 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Classic Espresso",
+      "category": "Coffee",
+      "price": 120,
+      "image": "images/coffee-1.jpg",
+      "description": "Rich and bold espresso shot."
+    },
+    {
+      "id": 2,
+      "name": "Americano",
+      "category": "Coffee",
+      "price": 130,
+      "image": "images/coffee-2.jpg",
+      "description": "Smooth espresso with hot water."
+    },
+    {
+      "id": 3,
+      "name": "Caffè Latte",
+      "category": "Coffee",
+      "price": 140,
+      "image": "images/coffee-3.jpg",
+      "description": "Creamy milk blended with espresso."
+    },
+    {
+      "id": 4,
+      "name": "Cappuccino",
+      "category": "Coffee",
+      "price": 140,
+      "image": "images/coffee-4.jpg",
+      "description": "Foamy and perfectly balanced."
+    },
+    {
+      "id": 5,
+      "name": "Mocha",
+      "category": "Coffee",
+      "price": 150,
+      "image": "images/coffee-5.jpg",
+      "description": "Chocolate flavored espresso drink."
+    },
+    {
+      "id": 6,
+      "name": "Caramel Macchiato",
+      "category": "Coffee",
+      "price": 160,
+      "image": "images/coffee-6.jpg",
+      "description": "Sweet caramel layered coffee."
+    },
+    {
+      "id": 7,
+      "name": "Vanilla Latte",
+      "category": "Coffee",
+      "price": 155,
+      "image": "images/coffee-7.jpg",
+      "description": "Smooth vanilla infused latte."
+    },
+    {
+      "id": 8,
+      "name": "Hazelnut Coffee",
+      "category": "Coffee",
+      "price": 155,
+      "image": "images/coffee-8.jpg",
+      "description": "Nutty and aromatic coffee blend."
+    },
+    {
+      "id": 9,
+      "name": "Irish Coffee",
+      "category": "Coffee",
+      "price": 170,
+      "image": "images/coffee-9.jpg",
+      "description": "Warm creamy Irish style coffee."
+    },
+    {
+      "id": 10,
+      "name": "Cold Brew Coffee",
+      "category": "Coffee",
+      "price": 145,
+      "image": "images/coffee-10.jpg",
+      "description": "Slow brewed smooth cold coffee."
+    },
+    {
+      "id": 11,
+      "name": "Iced Latte",
+      "category": "Coffee",
+      "price": 140,
+      "image": "images/coffee-11.jpg",
+      "description": "Refreshing chilled latte."
+    },
+    {
+      "id": 12,
+      "name": "Iced Mocha",
+      "category": "Coffee",
+      "price": 150,
+      "image": "images/coffee-12.jpg",
+      "description": "Chocolate iced espresso drink."
+    },
+    {
+      "id": 13,
+      "name": "Frappuccino Coffee",
+      "category": "Coffee",
+      "price": 165,
+      "image": "images/coffee-13.jpg",
+      "description": "Blended creamy frozen coffee."
+    },
+    {
+      "id": 14,
+      "name": "White Chocolate Mocha",
+      "category": "Coffee",
+      "price": 160,
+      "image": "images/coffee-14.jpg",
+      "description": "Sweet white chocolate coffee."
+    },
+    {
+      "id": 15,
+      "name": "Double Espresso",
+      "category": "Coffee",
+      "price": 130,
+      "image": "images/coffee-15.jpg",
+      "description": "Extra strong double espresso shot."
+    },
+    {
+      "id": 16,
+      "name": "Flat White",
+      "category": "Coffee",
+      "price": 140,
+      "image": "images/coffee-16.jpg",
+      "description": "Velvety milk and espresso."
+    },
+    {
+      "id": 17,
+      "name": "Cortado",
+      "category": "Coffee",
+      "price": 135,
+      "image": "images/coffee-17.jpg",
+      "description": "Balanced espresso with milk."
+    },
+    {
+      "id": 18,
+      "name": "Affogato",
+      "category": "Coffee",
+      "price": 170,
+      "image": "images/coffee-18.jpg",
+      "description": "Espresso poured over ice cream."
+    },
+    {
+      "id": 19,
+      "name": "Coconut Coffee",
+      "category": "Coffee",
+      "price": 155,
+      "image": "images/coffee-19.jpg",
+      "description": "Creamy tropical coconut flavor."
+    },
+    {
+      "id": 20,
+      "name": "Almond Milk Latte",
+      "category": "Coffee",
+      "price": 150,
+      "image": "images/coffee-20.jpg",
+      "description": "Dairy free almond latte."
+    },
+    {
+      "id": 21,
+      "name": "Oat Milk Coffee",
+      "category": "Coffee",
+      "price": 150,
+      "image": "images/coffee-21.jpg",
+      "description": "Smooth oat milk coffee."
+    },
+    {
+      "id": 22,
+      "name": "Honey Cinnamon Latte",
+      "category": "Coffee",
+      "price": 160,
+      "image": "images/coffee-22.jpg",
+      "description": "Sweet honey cinnamon blend."
+    },
+    {
+      "id": 23,
+      "name": "Chocolate Coffee",
+      "category": "Coffee",
+      "price": 150,
+      "image": "images/coffee-23.jpg",
+      "description": "Rich coffee with cocoa."
+    },
+    {
+      "id": 24,
+      "name": "Mint Mocha",
+      "category": "Coffee",
+      "price": 160,
+      "image": "images/coffee-24.jpg",
+      "description": "Refreshing mint chocolate coffee."
+    },
+    {
+      "id": 25,
+      "name": "Red Eye Coffee",
+      "category": "Coffee",
+      "price": 135,
+      "image": "images/coffee-25.jpg",
+      "description": "Strong coffee with espresso shot."
+    },
+    {
+      "id": 26,
+      "name": "Black Coffee",
+      "category": "Coffee",
+      "price": 110,
+      "image": "images/coffee-26.jpg",
+      "description": "Simple classic brewed coffee."
+    },
+    {
+      "id": 27,
+      "name": "Long Black",
+      "category": "Coffee",
+      "price": 120,
+      "image": "images/coffee-27.jpg",
+      "description": "Espresso over hot water."
+    },
+    {
+      "id": 28,
+      "name": "Short Black",
+      "category": "Coffee",
+      "price": 115,
+      "image": "images/coffee-28.jpg",
+      "description": "Traditional espresso shot."
+    },
+    {
+      "id": 29,
+      "name": "Macchiato",
+      "category": "Coffee",
+      "price": 125,
+      "image": "images/coffee-29.jpg",
+      "description": "Espresso topped with foam."
+    },
+    {
+      "id": 30,
+      "name": "Breve Coffee",
+      "category": "Coffee",
+      "price": 145,
+      "image": "images/coffee-30.jpg",
+      "description": "Rich half and half latte."
+    },
+    {
+      "id": 31,
+      "name": "Viennese Coffee",
+      "category": "Coffee",
+      "price": 160,
+      "image": "images/coffee-31.jpg",
+      "description": "Coffee topped with whipped cream."
+    },
+    {
+      "id": 32,
+      "name": "Turkish Coffee",
+      "category": "Coffee",
+      "price": 130,
+      "image": "images/coffee-32.jpg",
+      "description": "Traditional finely ground coffee."
+    },
+    {
+      "id": 33,
+      "name": "Vietnamese Iced Coffee",
+      "category": "Coffee",
+      "price": 140,
+      "image": "images/coffee-33.jpg",
+      "description": "Sweet condensed milk coffee."
+    },
+    {
+      "id": 34,
+      "name": "Caramel Iced Coffee",
+      "category": "Coffee",
+      "price": 150,
+      "image": "images/coffee-34.jpg",
+      "description": "Chilled caramel flavored coffee."
+    },
+    {
+      "id": 35,
+      "name": "Hazelnut Frappe",
+      "category": "Coffee",
+      "price": 165,
+      "image": "images/coffee-35.jpg",
+      "description": "Frozen hazelnut coffee delight."
+    },
+    {
+      "id": 36,
+      "name": "Chocolate Cake Slice",
+      "category": "Sweet",
+      "price": 95,
+      "image": "images/sweet-36.jpg",
+      "description": "Moist rich chocolate cake."
+    },
+    {
+      "id": 37,
+      "name": "Vanilla Cupcake",
+      "category": "Sweet",
+      "price": 75,
+      "image": "images/sweet-37.jpg",
+      "description": "Soft vanilla frosted cupcake."
+    },
+    {
+      "id": 38,
+      "name": "Red Velvet Cake",
+      "category": "Sweet",
+      "price": 100,
+      "image": "images/sweet-38.jpg",
+      "description": "Classic red velvet goodness."
+    },
+    {
+      "id": 39,
+      "name": "Blueberry Muffin",
+      "category": "Sweet",
+      "price": 70,
+      "image": "images/sweet-39.jpg",
+      "description": "Fresh blueberry baked muffin."
+    },
+    {
+      "id": 40,
+      "name": "Chocolate Chip Cookie",
+      "category": "Sweet",
+      "price": 45,
+      "image": "images/sweet-40.jpg",
+      "description": "Warm chewy chocolate cookie."
+    },
+    {
+      "id": 41,
+      "name": "Butter Cookie",
+      "category": "Sweet",
+      "price": 40,
+      "image": "images/sweet-41.jpg",
+      "description": "Classic buttery baked cookie."
+    },
+    {
+      "id": 42,
+      "name": "Butter Croissant",
+      "category": "Sweet",
+      "price": 65,
+      "image": "images/sweet-42.jpg",
+      "description": "Flaky buttery croissant pastry."
+    },
+    {
+      "id": 43,
+      "name": "Almond Croissant",
+      "category": "Sweet",
+      "price": 75,
+      "image": "images/sweet-43.jpg",
+      "description": "Croissant filled with almonds."
+    },
+    {
+      "id": 44,
+      "name": "Cinnamon Roll",
+      "category": "Sweet",
+      "price": 70,
+      "image": "images/sweet-44.jpg",
+      "description": "Soft cinnamon glazed pastry."
+    },
+    {
+      "id": 45,
+      "name": "Apple Pie Slice",
+      "category": "Sweet",
+      "price": 85,
+      "image": "images/sweet-45.jpg",
+      "description": "Warm apple filled pie."
+    },
+    {
+      "id": 46,
+      "name": "Blueberry Pie",
+      "category": "Sweet",
+      "price": 90,
+      "image": "images/sweet-46.jpg",
+      "description": "Sweet blueberry baked pie."
+    },
+    {
+      "id": 47,
+      "name": "Strawberry Cheesecake",
+      "category": "Sweet",
+      "price": 110,
+      "image": "images/sweet-47.jpg",
+      "description": "Creamy strawberry cheesecake slice."
+    },
+    {
+      "id": 48,
+      "name": "Chocolate Cheesecake",
+      "category": "Sweet",
+      "price": 115,
+      "image": "images/sweet-48.jpg",
+      "description": "Chocolate flavored cheesecake delight."
+    },
+    {
+      "id": 49,
+      "name": "Brownie Fudge",
+      "category": "Sweet",
+      "price": 60,
+      "image": "images/sweet-49.jpg",
+      "description": "Rich fudgy chocolate brownie."
+    },
+    {
+      "id": 50,
+      "name": "Blondie Bar",
+      "category": "Sweet",
+      "price": 55,
+      "image": "images/sweet-50.jpg",
+      "description": "Sweet chewy blondie dessert."
+    },
+    {
+      "id": 51,
+      "name": "Glazed Donut",
+      "category": "Sweet",
+      "price": 40,
+      "image": "images/sweet-51.jpg",
+      "description": "Classic sweet glazed donut."
+    },
+    {
+      "id": 52,
+      "name": "Chocolate Donut",
+      "category": "Sweet",
+      "price": 45,
+      "image": "images/sweet-52.jpg",
+      "description": "Chocolate coated fluffy donut."
+    },
+    {
+      "id": 53,
+      "name": "Strawberry Donut",
+      "category": "Sweet",
+      "price": 45,
+      "image": "images/sweet-53.jpg",
+      "description": "Sweet strawberry glazed donut."
+    },
+    {
+      "id": 54,
+      "name": "Fruit Danish Pastry",
+      "category": "Sweet",
+      "price": 70,
+      "image": "images/sweet-54.jpg",
+      "description": "Fresh fruit filled pastry."
+    },
+    {
+      "id": 55,
+      "name": "Cheese Danish",
+      "category": "Sweet",
+      "price": 75,
+      "image": "images/sweet-55.jpg",
+      "description": "Creamy cheese danish pastry."
+    },
+    {
+      "id": 56,
+      "name": "Vanilla Macaron",
+      "category": "Sweet",
+      "price": 35,
+      "image": "images/sweet-56.jpg",
+      "description": "Sweet delicate vanilla macaron."
+    },
+    {
+      "id": 57,
+      "name": "Chocolate Macaron",
+      "category": "Sweet",
+      "price": 35,
+      "image": "images/sweet-57.jpg",
+      "description": "Chocolate flavored french macaron."
+    },
+    {
+      "id": 58,
+      "name": "Strawberry Macaron",
+      "category": "Sweet",
+      "price": 35,
+      "image": "images/sweet-58.jpg",
+      "description": "Light strawberry macaron dessert."
+    },
+    {
+      "id": 59,
+      "name": "Fruit Tart",
+      "category": "Sweet",
+      "price": 85,
+      "image": "images/sweet-59.jpg",
+      "description": "Fresh fruit topped tart."
+    },
+    {
+      "id": 60,
+      "name": "Lemon Tart",
+      "category": "Sweet",
+      "price": 80,
+      "image": "images/sweet-60.jpg",
+      "description": "Tangy sweet lemon tart."
+    },
+    {
+      "id": 61,
+      "name": "Chocolate Eclair",
+      "category": "Sweet",
+      "price": 70,
+      "image": "images/sweet-61.jpg",
+      "description": "Cream filled chocolate eclair."
+    },
+    {
+      "id": 62,
+      "name": "Cream Puff",
+      "category": "Sweet",
+      "price": 65,
+      "image": "images/sweet-62.jpg",
+      "description": "Soft puff with cream filling."
+    },
+    {
+      "id": 63,
+      "name": "Banana Bread Slice",
+      "category": "Sweet",
+      "price": 60,
+      "image": "images/sweet-63.jpg",
+      "description": "Moist homemade banana bread."
+    },
+    {
+      "id": 64,
+      "name": "Walnut Muffin",
+      "category": "Sweet",
+      "price": 70,
+      "image": "images/sweet-64.jpg",
+      "description": "Crunchy walnut muffin delight."
+    },
+    {
+      "id": 65,
+      "name": "Coconut Macaroon",
+      "category": "Sweet",
+      "price": 50,
+      "image": "images/sweet-65.jpg",
+      "description": "Sweet chewy coconut macaroon."
+    },
+    {
+      "id": 66,
+      "name": "Sugar Cookie",
+      "category": "Sweet",
+      "price": 40,
+      "image": "images/sweet-66.jpg",
+      "description": "Classic sugar sprinkled cookie."
+    },
+    {
+      "id": 67,
+      "name": "Honey Bun",
+      "category": "Sweet",
+      "price": 55,
+      "image": "images/sweet-67.jpg",
+      "description": "Soft sweet honey glazed bun."
+    },
+    {
+      "id": 68,
+      "name": "Marble Cake Slice",
+      "category": "Sweet",
+      "price": 90,
+      "image": "images/sweet-68.jpg",
+      "description": "Chocolate vanilla marble cake."
+    },
+    {
+      "id": 69,
+      "name": "Dark Chocolate Truffle",
+      "category": "Sweet",
+      "price": 50,
+      "image": "images/sweet-69.jpg",
+      "description": "Rich dark chocolate truffle."
+    },
+    {
+      "id": 70,
+      "name": "Milk Chocolate Ball",
+      "category": "Sweet",
+      "price": 45,
+      "image": "images/sweet-70.jpg",
+      "description": "Creamy milk chocolate treat."
+    }
+  ]
+}
